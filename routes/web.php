@@ -31,9 +31,9 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/peminjaman/{id}', [InventarisController::class, 'updatePeminjaman'])->name('peminjaman.update');
     Route::delete('/peminjaman/{id}', [InventarisController::class, 'destroyPeminjaman'])->name('peminjaman.destroy');
 
-    // Peminjam
-    Route::get('/peminjam', [InventarisController::class, 'indexPeminjam'])->name('peminjam.index');
+
 
     Route::resource('barang', BarangController::class);
-    Route::resource('peminjam', PeminjamController::class);
+
+    Route::get('/peminjam', [PeminjamController::class, 'index'])->name('peminjam.index');
 });
